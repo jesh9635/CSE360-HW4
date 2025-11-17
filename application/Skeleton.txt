@@ -1,0 +1,108 @@
+General Skeleton
+
+-----------------------------
+Calling New Page:
+-----------------------------
+	new <page>(<database>).show(primaryStage);
+	
+	
+------------------------------	
+General Page Skeleton
+------------------------------
+package <currentPackage>;
+
+import databasePart1.*;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+
+public class <page> {
+	private final DatabaseHelper databaseHelper; //Initialize the databaseHelper
+	
+	public <page>(DatabaseHelper databaseHelper){ //Constructor for setting database
+		this.databaseHelper = databaseHelper;
+	}
+	
+	public void show (Stage primaryStage){ //Main Method
+		//Set the objects (Labels, Fields, Button)
+		
+		Button <button> = new Button("<buttonTitle>");
+		<button>.setOnAction (a -> {
+			//Set actions to do on button click (Usually Validation of Data from Page using Other Class and/or Calling new page)
+			//Any actions that deal with database need try-catch blocks
+		});
+	
+	
+        // VBox for the white border containing the content
+        VBox contentCard = new VBox(15);
+        contentCard.setAlignment(Pos.CENTER);
+        contentCard.setPadding(new Insets(40, 40, 40, 40));
+        contentCard.setMaxWidth(400);
+        contentCard.setStyle(
+            "-fx-background-color: white; " +
+            "-fx-background-radius: 10px; " +
+            "-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 15, 0, 0, 5);"
+        );
+        contentCard.getChildren().addAll(<All Labels, Buttons, Fields>);
+
+        // StackPane for grey background
+        StackPane rootLayout = new StackPane(contentCard);
+        rootLayout.setStyle("-fx-background-color: #f3f2ef;");
+        rootLayout.setPadding(new Insets(20));
+
+        primaryStage.setScene(new Scene(rootLayout, 800, 600));
+        primaryStage.setTitle("Administrator Setup");
+        primaryStage.show();
+	}
+}
+----------------
+Styling
+----------------
+Field Styling:
+
+String fieldStyle = "-fx-font-size: 14px; -fx-background-radius: 8px; -fx-border-color: #ccc; -fx-border-radius: 8px; -fx-padding: 10px;";
+TextField userNameField = new TextField();
+userNameField.setPromptText("Enter Username");
+userNameField.setStyle(fieldStyle);
+
+Button Styling:
+Button setupButton = new Button("Setup");
+setupButton.setMaxWidth(Double.MAX_VALUE);
+setupButton.setStyle(
+    "-fx-background-color: #0077B5; -fx-text-fill: white; " +
+    "-fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 20px; -fx-padding: 12px;"
+);
+setupButton.setOnAction(a -> {
+	//Insert Actions to do
+});
+
+
+------------------------------
+Database Operations Reference:
+------------------------------
+//Database operations reference:
+try {
+	// Create a new User object with admin role and register in the database
+	User user=new User(userName, password, "admin");
+    databaseHelper.register(user);
+    System.out.println("Administrator setup completed.");
+    
+    // Navigate to the Welcome Login Page
+    new UserLoginPage(databaseHelper).show(primaryStage);
+} catch (SQLException e) {
+    System.err.println("Database error: " + e.getMessage());
+    e.printStackTrace();
+}
+------------------------
+General Class Skeleton:
+-------------------------
+package <currentPackage>
+
+public class <Class>{
+	//Set public and private static variables
+	//Set public and private static functions
+}
+
+-----------

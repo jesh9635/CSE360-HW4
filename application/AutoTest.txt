@@ -1,0 +1,51 @@
+Locations for functionalities:
+
+
+
+
+Test 1:
+/*
+Question newQuestion = new Question(username, questionText, false, 0, questionid);
+databaseHelper.createQuestion(newQuestion);
+Answer newAnswer = new Answer(currentUser.getUserName(), newAnswerText.getText(), false, false, 0, question.getQuestionID());
+databaseHelper.createAnswer(newAnswer);
+*/
+
+
+create a question as student 1
+answer question as student 2
+see if the answer function returns true
+
+Test 2:
+/*
+Answer newAnswer = new Answer(currentUser.getUserName(), newAnswerText.getText(), false, false, 0, question.getQuestionID());
+databaseHelper.createAnswer(newAnswer);
+*/
+
+create the same answer as in test 1
+see if the answer function returns false
+
+Test 3:
+/*
+databaseHelper.updateAnswer(answer.getID(), newText);
+*/
+
+update the answer in test 2 with a new value
+see if the function returns true
+
+Test 4
+/*
+databaseHelper.deleteAnswer(answer.getID());
+*/
+
+delete the answer in test 3
+see if the function returns true
+
+Test 5
+/*
+databaseHelper.createAnswer(newAnswer); //Empty answer
+*/
+
+post empty anwer
+see if the function returns false
+

@@ -1,0 +1,38 @@
+Intialized Users:
+databaseHelper.register(new User("student1", "123", "student"));
+databaseHelper.register(new User("student2", "123", "student"));
+databaseHelper.register(new User("student3", "123", "student"));
+databaseHelper.register(new User("user", "123", "user"));
+databaseHelper.register(new User("admin", "123", "admin"));
+
+Initialized Question Answers:
+String q1Text = "What does 'students to ask for or suggest clarifications' mean in terms of functionality? Does this mean adding comments under questions and answers? Or referring to private messaging function (mentioned in the user stories doc)? Or something else entirely?";
+String a1Text = "You can treat this as a commenting or discussion feature linked to questions or answers.";
+String a2Text = "Having the same question for this description 'students to ask for or suggest clarifications'.  Any hint what's mean here? Or we can based on our understanding to implement this requirement? ";
+String q2Text = "Hi, my originality report is orange. I checked the report, and it flagged my user stories. I assumed that we were supposed to just give the the user stories as they were in the provided documents and to just break them down if we needed to. For my test cases, I tried to write them similarly to the user cases, so I wrote 'a student should be able to', and it flagged these parts of my test cases. I assumed that we were supposed to write like this? Will I be penalized for this, or is it fine?";
+String a3Text = "I doubt you need to worry about it. The template does not require much text and one of the major sections is quoting the provided material. It’s normal to have a low originality score under these circumstances.";
+Question question1 = new Question("student1", q1Text, false, 0);
+Answer answer1 = new Answer("student2", a1Text, false, false, 0, 0);
+Answer answer2 = new Answer("student3", a2Text, false, false, 0, 0);
+Question question2 = new Question("student2", q2Text, false, 1);
+Answer answer3 = new Answer("student3", a3Text, false, false, 0, 1);
+databaseHelper.createQuestion(question1);
+databaseHelper.createAnswer(answer1);
+databaseHelper.createAnswer(answer2);
+databaseHelper.createQuestion(question2);
+databaseHelper.createAnswer(answer3);
+
+
+
+Q1: Student 1
+What does "students to ask for or suggest clarifications" mean in terms of functionality? Does this mean adding comments under questions and answers? Or referring to private messaging function (mentioned in the user stories doc)? Or something else entirely?
+Q2: Student 1
+Hi, my originality report is orange. I checked the report, and it flagged my user stories. I assumed that we were supposed to just give the the user stories as they were in the provided documents and to just break them down if we needed to. For my test cases, I tried to write them similarly to the user cases, so I wrote 'a student should be able to', and it flagged these parts of my test cases. I assumed that we were supposed to write like this? Will I be penalized for this, or is it fine?
+
+
+PM1: Student 2
+Can you make your question more specific
+It seems that this question is too broad
+
+PM2: Student 3
+Can you provide more context to your question

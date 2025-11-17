@@ -1,0 +1,38 @@
+Tasks to do:
+(X) Merge views private messages to my question 
+(X) Delete the button private message
+(X) Add a counter for conversations next to each question in my question (If there is any message with seenStatus = 0, for a user, add to the counter)
+(X) Replace PrivateMessage seenStatus with seenStatusReciever
+(X) Edit Database to store seenStatusReciever
+(X) In Forum view, add visual for unread messages (if there is any message with seenStatus = 0)
+(X) Anytime message chain opened, change the seen status of all messages
+(X) Add text to show that private messages are empty
+Merge with alem's update
+CleanUp:
+Remove private message button artifacts (student homepage)
+remove send pm button artifacts (forum)
+remove studentprivatemesssagequestionspage
+
+
+
+
+
+Use TestStudentMyPages
+
+
+Done: 
+
+Pages Edited:
+	QuestionsPage
+Needed Pages:	
+
+
+For Screencasts:
+Show demo of posting question
+Show demo of sending private message to question asker
+Show demo of viewing private messages to my questions
+Show demo of sending message back
+Show demo of viewing private message from other person
+
+
+Each unread message is pm where receiver is currentUser, and seenStatusReceiver is false. 
